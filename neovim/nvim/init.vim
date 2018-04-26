@@ -1,3 +1,5 @@
+" vim-bootstrap b990cad
+
 "*****************************************************************************
 "" Vim-PLug core
 "*****************************************************************************
@@ -161,6 +163,10 @@ let g:session_directory = "~/.config/nvim/session"
 let g:session_autoload = "no"
 let g:session_autosave = "no"
 let g:session_command_aliases = 1
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 0
+let g:python_host_prog = "/home/jonatas/.pyenv/versions/tools2/bin/python"
+let g:python3_host_prog = "/home/jonatas/.pyenv/versions/tools3/bin/python"
+
 
 "*****************************************************************************
 "" Visual Settings
@@ -257,7 +263,7 @@ let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 50
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 nnoremap <silent> <F2> :NERDTreeFind<CR>
-noremap <F3> :NERDTreeToggle<CR>
+nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
 " grep.vim
 nnoremap <silent> <leader>f :Rgrep<CR>
@@ -484,6 +490,7 @@ let g:jedi#rename_command = "<leader>r"
 let g:jedi#show_call_signatures = "0"
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#smart_auto_mappings = 0
+let g:jedi#force_py_version=3
 
 " syntastic
 let g:syntastic_python_checkers=['python', 'flake8']
@@ -544,3 +551,6 @@ else
   let g:airline_symbols.readonly = ''
   let g:airline_symbols.linenr = ''
 endif
+
+map <F9> :cnext<CR>
+map <F10> :cprevious<CR>
